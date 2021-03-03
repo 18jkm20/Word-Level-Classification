@@ -83,7 +83,7 @@ function analyseVocab() {
           let result = "";
           let level = parseInt(numberIndex / 1000) + 1;
 
-          result = "level" + " " + level + " " + vocab + " : " + thaiMeanDatas[numberIndex];
+          result = "level" + " " + level + " " + vocab + ": " + thaiMeanDatas[numberIndex];
 
 
           //show data in resultDivBox
