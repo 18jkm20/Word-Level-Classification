@@ -13,11 +13,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <!-- <script src="./rita.min.js"></script> -->
 
-  <script type="text/javascript" src="dataVocab.js"></script>
+
   <script type="text/javascript" src="JapaneseMeaning.js"></script>
   <script type="text/javascript" src="ThaiMeaning.js"></script>
   <script type="text/javascript" src="splitFunction.js"></script>
-  <script type="text/javascript" src="splitFunction2.js"></script>
+  <script type="text/javascript" src="alcVocabularyDatabase.js"></script>
+
 
 
 
@@ -39,37 +40,52 @@
   <textarea class="form-control" name="text" cols="100%" rows="5" id="myText"></textarea>
   <br>
 
+  <div id="Analysis Conditions">
+    <p style="display:inline"> <strong>Level :</strong>
 
-  <p style="display:inline"> <strong>Level :</strong>
-    <select name="level" id="levelNumber">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-    </select>
-  </p>
+      <select name="level" id="levelNumber">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+    </p>
 
-  <p style="display:inline"> <strong>Language :</strong>
-    <select name="language" id="languageMeaning">
-      <option value="1">Japanese</option>
-      <option value="2">Thai</option>
-    </select>
-  </p>
+    <p style="display:inline"> <strong>Language :</strong>
+      <select name="language" id="languageMeaning">
+        <option value="1">Japanese</option>
+        <option value="2">Thai</option>
+      </select>
+    </p>
 
+    <hr>
+
+    <button type="button" class="btn btn-primary" onclick="analyseVocab()">submit</button>
+    <button type="button" class="btn btn-warning" onclick="refresh()">new</button>
+
+    <hr>
+  </div>
+
+  <div id = "InsideAlcDatabase">
+    <p>Vocabulary inside ALC Database.</p>
+  </div>
 
   <hr>
 
-  <button type="button" class="btn btn-primary" onclick="analyseVocab()">submit</button>
+  <div id = "OutsideAlcDatabase">
+    <p>Vocabulary outside ALC Database.</p>
+  </div>
+  
+  <hr>
 
+</body>
 
-  <button type="button" class="btn btn-warning" onclick="refresh()">new</button>
-
-  <hr </body> </html>
+</html>
