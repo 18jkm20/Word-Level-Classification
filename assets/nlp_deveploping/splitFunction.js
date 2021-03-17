@@ -116,43 +116,52 @@ function analyseVocab() {
       let tr = document.createElement("TR");
       tableBody.appendChild(tr);
 
-      for (let j = 0; j < 4; j++) {
+      // select and show upper level of vocabulary
+      if (index[i] >= (levelNumber - 1) * 1000) {
 
-        let td = document.createElement("TD");
+        for (let j = 0; j < 4; j++) {
 
-        switch (j) {
+          let td = document.createElement("TD");
 
-          case 0:
-            let numberLevel = (parseInt(index[i] / 1000)) + 1;
+          switch (j) {
 
-            td.width = "60";
-            td.appendChild(document.createTextNode("level " + numberLevel));
-            tr.appendChild(td);
-            break;
+            case 0:
+              let numberLevel = (parseInt(index[i] / 1000)) + 1;
 
-          case 1:
-            td.width = "80";
-            td.appendChild(document.createTextNode(alcVocabularyDatabase[index[i]]));
-            tr.appendChild(td);
-            break;
+              td.width = "20";
+              td.appendChild(document.createTextNode(numberLevel));
+              tr.appendChild(td);
+              break;
 
-          case 2:
-            td.width = "30";
-            td.appendChild(document.createTextNode(japaneseMeanDatas[index[i]][0]));
-            tr.appendChild(td);
-            break;
+            case 1:
+              td.width = "80";
+              td.appendChild(document.createTextNode(alcVocabularyDatabase[index[i]]));
+              tr.appendChild(td);
+              break;
 
-          case 3:
-            td.width = "400";
-            td.appendChild(document.createTextNode(japaneseMeanDatas[index[i]][1]));
-            tr.appendChild(td);
-            break;
+            case 2:
+              td.width = "30";
+              td.appendChild(document.createTextNode(japaneseMeanDatas[index[i]][0]));
+              tr.appendChild(td);
+              break;
 
-          default:
-            console.log("can not creat table");
+            case 3:
+              td.width = "400";
+              td.appendChild(document.createTextNode(japaneseMeanDatas[index[i]][1]));
+              tr.appendChild(td);
+              break;
 
+            default:
+              console.log("can not creat table");
+
+          }
         }
+
+      } else {
+
       }
+
+
     }
 
     // put the table data to resultInsideAlcDatabase
@@ -160,16 +169,17 @@ function analyseVocab() {
 
 
     // show data in #OutsideAlcDatabase
-    resultOutsideAlc = outsideAlcWords;
-
     let resultOutsideAlcDatabase = document.querySelector("#OutsideAlcDatabase");
 
     // remove all child first
     removeAllChildNodes(resultOutsideAlcDatabase);
 
-    let paraOutside = document.createElement("P");
-    paraOutside.innerHTML = resultOutsideAlc;
-    resultOutsideAlcDatabase.appendChild(paraOutside);
+    for (let i = 0; i < outsideAlcWords.length; i++) {
+
+      let paraOutside = document.createElement("P");
+      paraOutside.innerHTML = outsideAlcWords[i];
+      resultOutsideAlcDatabase.appendChild(paraOutside);
+    }
 
 
   } else if (languageNumber === 2) {
@@ -198,43 +208,52 @@ function analyseVocab() {
       let tr = document.createElement("TR");
       tableBody.appendChild(tr);
 
-      for (let j = 0; j < 4; j++) {
+      // select and show upper level of vocabulary
+      if (index[i] >= (levelNumber - 1) * 1000) {
 
-        let td = document.createElement("TD");
+        for (let j = 0; j < 4; j++) {
 
-        switch (j) {
+          let td = document.createElement("TD");
 
-          case 0:
-            let numberLevel = (parseInt(index[i] / 1000)) + 1;
+          switch (j) {
 
-            td.width = "60";
-            td.appendChild(document.createTextNode("level " + numberLevel));
-            tr.appendChild(td);
-            break;
+            case 0:
+              let numberLevel = (parseInt(index[i] / 1000)) + 1;
 
-          case 1:
-            td.width = "80";
-            td.appendChild(document.createTextNode(alcVocabularyDatabase[index[i]]));
-            tr.appendChild(td);
-            break;
+              td.width = "20";
+              td.appendChild(document.createTextNode(numberLevel));
+              tr.appendChild(td);
+              break;
 
-          case 2:
-            td.width = "30";
-            td.appendChild(document.createTextNode(thaiMeanDatas[index[i]][0]));
-            tr.appendChild(td);
-            break;
+            case 1:
+              td.width = "80";
+              td.appendChild(document.createTextNode(alcVocabularyDatabase[index[i]]));
+              tr.appendChild(td);
+              break;
 
-          case 3:
-            td.width = "400";
-            td.appendChild(document.createTextNode(thaiMeanDatas[index[i]][1]));
-            tr.appendChild(td);
-            break;
+            case 2:
+              td.width = "30";
+              td.appendChild(document.createTextNode(thaiMeanDatas[index[i]][0]));
+              tr.appendChild(td);
+              break;
 
-          default:
-            console.log("can not creat table");
+            case 3:
+              td.width = "400";
+              td.appendChild(document.createTextNode(thaiMeanDatas[index[i]][1]));
+              tr.appendChild(td);
+              break;
 
+            default:
+              console.log("can not creat table");
+
+          }
         }
+
+      } else {
+
       }
+
+
     }
 
     // put the table data to resultInsideAlcDatabase
@@ -242,16 +261,18 @@ function analyseVocab() {
 
 
     // show data in #OutsideAlcDatabase
-    resultOutsideAlc = outsideAlcWords;
-
     let resultOutsideAlcDatabase = document.querySelector("#OutsideAlcDatabase");
 
     // remove all child first
     removeAllChildNodes(resultOutsideAlcDatabase);
 
-    let paraOutside = document.createElement("P");
-    paraOutside.innerHTML = resultOutsideAlc;
-    resultOutsideAlcDatabase.appendChild(paraOutside);
+    for (let i = 0; i < outsideAlcWords.length; i++) {
+
+      let paraOutside = document.createElement("P");
+      paraOutside.innerHTML = outsideAlcWords[i];
+      resultOutsideAlcDatabase.appendChild(paraOutside);
+    }
+
 
   }
 
