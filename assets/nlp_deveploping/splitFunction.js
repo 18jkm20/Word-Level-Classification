@@ -51,6 +51,9 @@ function analyseVocab() {
     }
   }
 
+  // sort outsideAlcWord
+  outsideAlcWords.sort();
+
   //! console.log(rawIndex);
 
   //! console.log(outsideAlcWords);
