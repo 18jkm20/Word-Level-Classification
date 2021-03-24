@@ -109,8 +109,34 @@ function analyseVocab() {
 
 
     let table = document.createElement("Table");
-    table.border = "1";
+    table.classList.add("table");
+    table.classList.add("table-striped");
 
+    //Create table head which include level word type meaning
+    let tableHead = document.createElement("THEAD");
+    table.appendChild(tableHead);
+
+    let trTableHead = document.createElement("TR");
+    tableHead.appendChild(trTableHead);
+
+    let thTableHead1 = document.createElement("TH");
+    thTableHead1.appendChild(document.createTextNode("Level"));
+    trTableHead.appendChild(thTableHead1);
+
+    let thTableHead2 = document.createElement("TH");
+    thTableHead2.appendChild(document.createTextNode("Word"));
+    trTableHead.appendChild(thTableHead2);
+
+    let thTableHead3 = document.createElement("TH");
+    thTableHead3.appendChild(document.createTextNode("Type"));
+    trTableHead.appendChild(thTableHead3);
+
+    let thTableHead4 = document.createElement("TH");
+    thTableHead4.appendChild(document.createTextNode("Meaning"));
+    trTableHead.appendChild(thTableHead4);
+
+
+    // Create table body which include the detail of vocabulary
     let tableBody = document.createElement("TBODY");
     table.appendChild(tableBody);
 
@@ -131,25 +157,25 @@ function analyseVocab() {
             case 0:
               let numberLevel = (parseInt(index[i] / 1000)) + 1;
 
-              td.width = "20";
+              // td.width = "20";
               td.appendChild(document.createTextNode(numberLevel));
               tr.appendChild(td);
               break;
 
             case 1:
-              td.width = "80";
+              // td.width = "80";
               td.appendChild(document.createTextNode(alcVocabularyDatabase[index[i]]));
               tr.appendChild(td);
               break;
 
             case 2:
-              td.width = "30";
+              // td.width = "30";
               td.appendChild(document.createTextNode(japaneseMeanDatas[index[i]][0]));
               tr.appendChild(td);
               break;
 
             case 3:
-              td.width = "400";
+              // td.width = "400";
               td.appendChild(document.createTextNode(japaneseMeanDatas[index[i]][1]));
               tr.appendChild(td);
               break;
@@ -172,14 +198,16 @@ function analyseVocab() {
 
 
     // show data in #OutsideAlcDatabase
-    let resultOutsideAlcDatabase = document.querySelector("#OutsideAlcDatabase");
+    let resultOutsideAlcDatabase = document.querySelector("#OutsideAlcDatabaseList");
 
     // remove all child first
     removeAllChildNodes(resultOutsideAlcDatabase);
 
     for (let i = 0; i < outsideAlcWords.length; i++) {
 
-      let paraOutside = document.createElement("P");
+      let paraOutside = document.createElement("li");
+      paraOutside.classList.add("list-group-item")
+      paraOutside.classList.add("list-group-item-light")
       paraOutside.innerHTML = outsideAlcWords[i];
       resultOutsideAlcDatabase.appendChild(paraOutside);
     }
@@ -199,12 +227,38 @@ function analyseVocab() {
     paraInside.innerHTML = resultInsideAlc;
     resultInsideAlcDatabase.appendChild(paraInside);
 
-
     let table = document.createElement("Table");
-    table.border = "1";
+    table.classList.add("table");
+    table.classList.add("table-striped");
 
+    //Create table head which include level word type meaning
+    let tableHead = document.createElement("THEAD");
+    table.appendChild(tableHead);
+
+    let trTableHead = document.createElement("TR");
+    tableHead.appendChild(trTableHead);
+
+    let thTableHead1 = document.createElement("TH");
+    thTableHead1.appendChild(document.createTextNode("Level"));
+    trTableHead.appendChild(thTableHead1);
+
+    let thTableHead2 = document.createElement("TH");
+    thTableHead2.appendChild(document.createTextNode("Word"));
+    trTableHead.appendChild(thTableHead2);
+
+    let thTableHead3 = document.createElement("TH");
+    thTableHead3.appendChild(document.createTextNode("Type"));
+    trTableHead.appendChild(thTableHead3);
+
+    let thTableHead4 = document.createElement("TH");
+    thTableHead4.appendChild(document.createTextNode("Meaning"));
+    trTableHead.appendChild(thTableHead4);
+
+
+    // Create table body which include the detail of vocabulary
     let tableBody = document.createElement("TBODY");
     table.appendChild(tableBody);
+
 
     for (let i = 0; i < index.length; i++) {
 
@@ -264,18 +318,19 @@ function analyseVocab() {
 
 
     // show data in #OutsideAlcDatabase
-    let resultOutsideAlcDatabase = document.querySelector("#OutsideAlcDatabase");
+    let resultOutsideAlcDatabase = document.querySelector("#OutsideAlcDatabaseList");
 
     // remove all child first
     removeAllChildNodes(resultOutsideAlcDatabase);
 
     for (let i = 0; i < outsideAlcWords.length; i++) {
 
-      let paraOutside = document.createElement("P");
+      let paraOutside = document.createElement("li");
+      paraOutside.classList.add("list-group-item")
+      paraOutside.classList.add("list-group-item-light")
       paraOutside.innerHTML = outsideAlcWords[i];
       resultOutsideAlcDatabase.appendChild(paraOutside);
     }
-
 
   }
 

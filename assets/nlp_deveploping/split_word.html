@@ -20,8 +20,6 @@
   <script type="text/javascript" src="alcVocabularyDatabase.js"></script>
 
 
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,58 +31,109 @@
 <body>
 
 
-  <nav class="navbar navbar-light" style="background-color: #F9E79F;">
-    <h1>Text Analyzer</h1>
+  <nav class="navbar justify-content-center" style="background-color: #eab1029F;">
+    <h1 class="display-4 text-center">Text Analyzer</h1>
   </nav>
 
-  <textarea class="form-control" name="text" cols="100%" rows="5" id="myText"></textarea>
-  <br>
-
-  <div id="Analysis Conditions">
-    <p style="display:inline"> <strong>Level :</strong>
-
-      <select name="level" id="levelNumber">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
-    </p>
-
-    <p style="display:inline"> <strong>Language :</strong>
-      <select name="language" id="languageMeaning">
-        <option value="1">Japanese</option>
-        <option value="2">Thai</option>
-      </select>
-    </p>
-
-    <hr>
-
-    <button type="button" class="btn btn-primary" onclick="analyseVocab()">submit</button>
-    <button type="button" class="btn btn-warning" onclick="refresh()">new</button>
-
-    <hr>
+  <div class="container" style="margin-top:20px;">
+    <textarea class="form-control" name="text" cols="100%" rows="5" id="myText"
+      placeholder="Copy and paste the text here."></textarea>
+    <br>
   </div>
 
-  <div id = "InsideAlcDatabase">
-    <p>Vocabulary inside ALC Database.</p>
+  <div class="container">
+    <div id="Analysis Conditions">
+
+      <h6 style="display:inline"> <strong>Level :</strong>
+
+        
+          <select name="level" id="levelNumber" class="selectpicker">
+
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+
+          </select>
+        
+      </h6>
+
+      <h6 style="display:inline"> <strong>Language :</strong>
+        
+        <!-- <select name="language" id="languageMeaning" class="form-select">
+          <option value="1">Japanese</option>
+          <option value="2">Thai</option>
+        </select> -->
+
+        <select name="language" id="languageMeaning" class="selectpicker">
+          <option value="1">Japanese</option>
+          <option value="2">Thai</option>
+        </select>
+
+      </h6>
+
+      <hr>
+
+      <button type="button" class="btn btn-primary" onclick="analyseVocab()">submit</button>
+      <button type="button" class="btn btn-warning" onclick="refresh()">new</button>
+
+      <hr>
+    </div>
   </div>
 
-  <hr>
+  <div class="container">
+    <div id="InsideAlcDatabase">
+      <p>Vocabulary inside ALC Database.</p>
+    </div>
 
-  <div id = "OutsideAlcDatabase">
-    <p>Vocabulary outside ALC Database.</p>
+
+    <div id="OutsideAlcDatabase">
+      <ul class="list-group" id="OutsideAlcDatabaseList">
+        <li>Vocabulary Outside ALC Database.</li>
+        <!-- JavaScript will add Outside ALC Database vocabulary here! -->
+      </ul>
+
+    </div>
   </div>
-  
-  <hr>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">
+  </script>
+
+
+  <!-- select and obtion style -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+  </script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js">
+  </script>
+
+  <!-- select and obtion style -->
 
 </body>
 
