@@ -42,12 +42,14 @@
   </div>
 
   <div class="container">
-    <div id="Analysis Conditions">
 
-      <h6 style="display:inline"> <strong>Level :</strong>
 
-        
-          <select name="level" id="levelNumber" class="selectpicker">
+    <div class="clearfix">
+      <div class="float-left mb-2 mr-5">
+        <h6 style="display:inline"> <strong>Level :</strong>
+
+
+          <select name="level" id="levelNumber" class="selectpicker px-0">
 
             <option value="1">1</option>
             <option value="2">2</option>
@@ -63,30 +65,50 @@
             <option value="12">12</option>
 
           </select>
-        
-      </h6>
 
-      <h6 style="display:inline"> <strong>Language :</strong>
-        
-        <!-- <select name="language" id="languageMeaning" class="form-select">
-          <option value="1">Japanese</option>
-          <option value="2">Thai</option>
-        </select> -->
+        </h6>
+      </div>
 
-        <select name="language" id="languageMeaning" class="selectpicker">
-          <option value="1">Japanese</option>
-          <option value="2">Thai</option>
-        </select>
+      <div class="float-left">
+        <h6 style="display:inline"> <strong>Language :</strong>
 
-      </h6>
+          <!-- <select name="language" id="languageMeaning" class="form-select">
+            <option value="1">Japanese</option>
+            <option value="2">Thai</option>
+          </select> -->
 
-      <hr>
+          <select name="language" id="languageMeaning" class="selectpicker">
+            <option value="1">Japanese</option>
+            <option value="2">Thai</option>
+          </select>
 
-      <button type="button" class="btn btn-primary" onclick="analyseVocab()">submit</button>
-      <button type="button" class="btn btn-warning" onclick="refresh()">new</button>
+        </h6>
+      </div>
 
-      <hr>
+
     </div>
+
+
+
+    <hr>
+
+    <!-- <div class="clearfix">
+      <button type="button" class="btn btn-primary float-left" onclick="analyseVocab()">submit</button>
+      <button type="button" class="btn btn-warning float-left" onclick="refresh()">new</button>
+    </div> -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-primary float-left btn-block" onclick="analyseVocab()">submit</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-warning float-left btn-block" onclick="refresh()">new</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+
   </div>
 
   <div class="container">
@@ -96,9 +118,9 @@
 
 
     <div id="OutsideAlcDatabase">
+      <p>Vocabulary Outside ALC Database.</p>
       <ul class="list-group" id="OutsideAlcDatabaseList">
-        <li>Vocabulary Outside ALC Database.</li>
-        <!-- JavaScript will add Outside ALC Database vocabulary here! -->
+        
       </ul>
 
     </div>
