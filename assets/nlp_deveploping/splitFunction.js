@@ -120,7 +120,7 @@ function analyseVocab() {
     tableHead.appendChild(trTableHead);
 
     let thTableHead1 = document.createElement("TH");
-    thTableHead1.appendChild(document.createTextNode("Level"));
+    thTableHead1.appendChild(document.createTextNode("#"));
     trTableHead.appendChild(thTableHead1);
 
     let thTableHead2 = document.createElement("TH");
@@ -239,7 +239,7 @@ function analyseVocab() {
     tableHead.appendChild(trTableHead);
 
     let thTableHead1 = document.createElement("TH");
-    thTableHead1.appendChild(document.createTextNode("Level"));
+    thTableHead1.appendChild(document.createTextNode("#"));
     trTableHead.appendChild(thTableHead1);
 
     let thTableHead2 = document.createElement("TH");
