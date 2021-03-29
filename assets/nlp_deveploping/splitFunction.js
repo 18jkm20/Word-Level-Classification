@@ -95,19 +95,14 @@ function analyseVocab() {
 
   if (languageNumber === 1) {
 
-    resultInsideAlc = "Vocabulary inside ALC Database.";
-
+    
     // show data in #InsideAlcDatabase
     let resultInsideAlcDatabase = document.querySelector("#InsideAlcDatabase");
 
     // remove all child first
     removeAllChildNodes(resultInsideAlcDatabase);
 
-    let paraInside = document.createElement("P");
-    paraInside.innerHTML = resultInsideAlc;
-    resultInsideAlcDatabase.appendChild(paraInside);
-
-
+    
     let table = document.createElement("Table");
     table.classList.add("table");
     table.classList.add("table-striped");
@@ -215,17 +210,11 @@ function analyseVocab() {
 
   } else if (languageNumber === 2) {
 
-    resultInsideAlc = "Vocabulary inside ALC Database.";
-
     // show data in #InsideAlcDatabase
     let resultInsideAlcDatabase = document.querySelector("#InsideAlcDatabase");
 
     // remove all child first
     removeAllChildNodes(resultInsideAlcDatabase);
-
-    let paraInside = document.createElement("P");
-    paraInside.innerHTML = resultInsideAlc;
-    resultInsideAlcDatabase.appendChild(paraInside);
 
     let table = document.createElement("Table");
     table.classList.add("table");
