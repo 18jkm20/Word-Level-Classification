@@ -203,8 +203,10 @@ function analyseVocab() {
       let paraOutside = document.createElement("li");
       paraOutside.classList.add("list-group-item")
       paraOutside.classList.add("list-group-item-light")
-      paraOutside.innerHTML = outsideAlcWords[i];
-      resultOutsideAlcDatabase.appendChild(paraOutside);
+      if(outsideAlcWords[i].length > 2){
+        paraOutside.innerHTML = outsideAlcWords[i];
+        resultOutsideAlcDatabase.appendChild(paraOutside);
+      }
     }
 
 
@@ -317,8 +319,12 @@ function analyseVocab() {
       let paraOutside = document.createElement("li");
       paraOutside.classList.add("list-group-item")
       paraOutside.classList.add("list-group-item-light")
-      paraOutside.innerHTML = outsideAlcWords[i];
-      resultOutsideAlcDatabase.appendChild(paraOutside);
+
+      if(outsideAlcWords[i].length > 2){
+        paraOutside.innerHTML = outsideAlcWords[i];
+        resultOutsideAlcDatabase.appendChild(paraOutside);
+      }
+      
     }
 
   }
